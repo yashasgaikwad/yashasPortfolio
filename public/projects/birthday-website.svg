@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#07112A"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="70%" cy="30%" r="52%">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.28"/>
+      <stop offset="55%" stop-color="#3B82F6" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#030712" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="480" rx="24" fill="url(#bg)"/>
+  <rect width="800" height="480" rx="24" fill="url(#orb)"/>
+  <rect x="74" y="74" width="652" height="332" rx="20" fill="#09142B" fill-opacity="0.92" stroke="#38BDF8" stroke-opacity="0.3"/>
+  <rect x="74" y="74" width="652" height="44" rx="20" fill="#0D1D3D"/>
+  <circle cx="106" cy="96" r="6" fill="#00D4FF"/>
+  <circle cx="126" cy="96" r="6" fill="#3B82F6"/>
+  <circle cx="146" cy="96" r="6" fill="#1E293B"/>
+  <rect x="112" y="146" width="180" height="28" rx="14" fill="#00D4FF" fill-opacity="0.14" stroke="#00D4FF" stroke-opacity="0.4"/>
+  <text x="202" y="165" text-anchor="middle" fill="#7DD3FC" font-family="monospace" font-size="12">INTERACTIVE WEB CARD</text>
+  <text x="112" y="218" fill="#F8FAFC" font-family="sans-serif" font-size="30" font-weight="700">Birthday Website</text>
+  <text x="112" y="250" fill="#94A3B8" font-family="sans-serif" font-size="15">Custom celebration webpage built with HTML, CSS &amp; JavaScript</text>
+  <rect x="112" y="286" width="160" height="78" rx="14" fill="#0C1C3D" stroke="#00D4FF" stroke-opacity="0.32"/>
+  <text x="134" y="320" fill="#BAE6FD" font-family="monospace" font-size="13">index.html</text>
+  <text x="134" y="344" fill="#64748B" font-family="monospace" font-size="11">Markup</text>
+  <rect x="292" y="286" width="160" height="78" rx="14" fill="#0C1C3D" stroke="#38BDF8" stroke-opacity="0.25"/>
+  <text x="314" y="320" fill="#BAE6FD" font-family="monospace" font-size="13">style.css</text>
+  <text x="314" y="344" fill="#64748B" font-family="monospace" font-size="11">Custom Styling</text>
+  <rect x="472" y="286" width="180" height="78" rx="14" fill="#0C1C3D" stroke="#38BDF8" stroke-opacity="0.25"/>
+  <text x="494" y="320" fill="#BAE6FD" font-family="monospace" font-size="13">script.js</text>
+  <text x="494" y="344" fill="#64748B" font-family="monospace" font-size="11">Interactivity</text>
+</svg>
+

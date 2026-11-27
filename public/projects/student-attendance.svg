@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#050D21"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="72%" cy="28%" r="48%">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="#030712" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="480" rx="24" fill="url(#bg)"/>
+  <rect width="800" height="480" rx="24" fill="url(#orb)"/>
+  <rect x="74" y="74" width="652" height="332" rx="20" fill="#081229" fill-opacity="0.9" stroke="#38BDF8" stroke-opacity="0.28"/>
+  <rect x="108" y="108" width="210" height="28" rx="14" fill="#00D4FF" fill-opacity="0.14" stroke="#00D4FF" stroke-opacity="0.4"/>
+  <text x="213" y="127" text-anchor="middle" fill="#7DD3FC" font-family="monospace" font-size="12">ATTENDANCE TRACKER</text>
+  <rect x="108" y="158" width="584" height="54" rx="12" fill="#0B1936" stroke="#38BDF8" stroke-opacity="0.22"/>
+  <circle cx="140" cy="185" r="7" fill="#22D3EE"/>
+  <text x="164" y="190" fill="#E2E8F0" font-family="sans-serif" font-size="15" font-weight="600">Student Roll Registry &amp; Daily Attendance Log</text>
+  <rect x="572" y="171" width="96" height="28" rx="8" fill="#00D4FF" fill-opacity="0.18" stroke="#00D4FF" stroke-opacity="0.45"/>
+  <text x="620" y="190" text-anchor="middle" fill="#BAE6FD" font-family="monospace" font-size="11">PRESENT</text>
+  <rect x="108" y="226" width="584" height="54" rx="12" fill="#0B1936" stroke="#38BDF8" stroke-opacity="0.22"/>
+  <circle cx="140" cy="253" r="7" fill="#3B82F6"/>
+  <text x="164" y="258" fill="#E2E8F0" font-family="sans-serif" font-size="15" font-weight="600">Subject-Wise Attendance Records &amp; Reports</text>
+  <rect x="572" y="239" width="96" height="28" rx="8" fill="#2563EB" fill-opacity="0.25" stroke="#60A5FA" stroke-opacity="0.45"/>
+  <text x="620" y="258" text-anchor="middle" fill="#DBEAFE" font-family="monospace" font-size="11">TRACKED</text>
+  <text x="108" y="346" fill="#F8FAFC" font-family="sans-serif" font-size="25" font-weight="700">Student Attendance System</text>
+  <text x="108" y="374" fill="#94A3B8" font-family="monospace" font-size="13">github.com/yashasgaikwad/student-attendencessss</text>
+</svg>
+

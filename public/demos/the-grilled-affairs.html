@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Grilled Affairs (TGA) | Sandwich • Pasta • Coffee | Jogeshwari</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for Artisanal Cafe Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            espresso: '#2C150C',
+            roast: '#432215',
+            caramel: '#C86D25',
+            amberFlame: '#EA580C',
+            parchment: '#FDF8F0',
+            cream: '#F6EFE2',
+            sage: '#6E8264',
+            sageLight: '#E5ECE0',
+            zomato: '#E23744'
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            script: ['Caveat', 'cursive']
+          },
+          boxShadow: {
+            'warm': '0 20px 45px -15px rgba(59, 31, 20, 0.14)',
+            'warm-lg': '0 25px 60px -12px rgba(59, 31, 20, 0.25)',
+            'glow': '0 0 25px rgba(234, 88, 12, 0.35)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-parchment: #FDF8F0;
+      --espresso: #2C150C;
+    }
+
+    body {
+      background-color: var(--bg-parchment);
+      color: var(--espresso);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Subtle artisanal paper texture overlay */
+    .paper-texture {
+      background-image: 
+        radial-gradient(rgba(67, 34, 21, 0.04) 1px, transparent 0),
+        radial-gradient(rgba(200, 109, 37, 0.03) 1px, transparent 0);
+      background-size: 28px 28px;
+      background-position: 0 0, 14px 14px;
+    }
+
+    /* Custom Animations */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
+    }
+    @keyframes floatReverse {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(8px) rotate(-2deg); }
+    }
+    @keyframes flameFlicker {
+      0%, 100% { transform: scale(1) rotate(-1deg); opacity: 0.95; }
+      50% { transform: scale(1.08, 1.12) rotate(2deg); opacity: 1; }
+    }
+    @keyframes steamRise {
+      0% { transform: translateY(6px) scaleX(0.9); opacity: 0; }
+      50% { opacity: 0.65; }
+      100% { transform: translateY(-16px) scaleX(1.15); opacity: 0; }
+    }
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes pulseRing {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.6); }
+      70% { transform: scale(1); box-shadow: 0 0 0 12px rgba(234, 88, 12, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
+    }
+
+    .animate-float { animation: floatSlow 5s ease-in-out infinite; }
+    .animate-float-reverse { animation: floatReverse 6s ease-in-out infinite; }
+    .animate-flame { animation: flameFlicker 1.8s ease-in-out infinite; transform-origin: bottom center; }
+    .animate-steam-1 { animation: steamRise 2.6s ease-in-out infinite; }
+    .animate-steam-2 { animation: steamRise 2.6s ease-in-out 0.9s infinite; }
+    .animate-steam-3 { animation: steamRise 2.6s ease-in-out 1.7s infinite; }
+    .animate-marquee { display: flex; width: 200%; animation: marqueeScroll 28s linear infinite; }
+    .animate-marquee:hover { animation-play-state: paused; }
+    .pulse-orange { animation: pulseRing 2s infinite; }
+
+    /* Scroll reveal transitions */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #F6EFE2; }
+    ::-webkit-scrollbar-thumb { background: #C86D25; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #432215; }
+
+    /* Brush stroke effect behind menu headers */
+    .sage-brush {
+      background: linear-gradient(104deg, rgba(110, 130, 100, 0.22) 0%, rgba(110, 130, 100, 0.32) 85%, rgba(110, 130, 100, 0.12) 100%);
+      border-radius: 24px 8px 28px 10px;
+    }
+  </style>
+</head>
+<body class="paper-texture antialiased selection:bg-caramel selection:text-white">
+
+  <!-- TOP LIVE DELIVERY & PICKUP ANNOUNCEMENT BAR -->
+  <div class="bg-espresso text-parchment text-xs sm:text-sm py-2.5 px-4 border-b border-amber-900/40 relative z-40">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amberFlame text-white">
+          <i class="fa-solid fa-fire-flame-curved mr-1.5"></i> CLOUD KITCHEN • JOGESHWARI
+        </span>
+        <span id="live-day-banner" class="font-medium text-amber-100">
+          <!-- Populated dynamically via JS -->
+        </span>
+      </div>
+      <div class="flex items-center gap-4 ml-auto">
+        <button onclick="toggleDaySimulation()" id="sim-day-btn" class="text-[11px] bg-white/10 hover:bg-white/20 text-amber-200 px-2.5 py-1 rounded-full transition flex items-center gap-1.5 cursor-pointer" title="Preview Weekday vs Weekend Delivery Rules">
+          <i class="fa-solid fa-sliders"></i>
+          <span id="sim-day-label">Switch Mode Preview</span>
+        </button>
+        <a href="tel:8879546412" class="hidden md:inline-flex items-center gap-1.5 text-amber-200 hover:text-white font-semibold transition">
+          <i class="fa-solid fa-phone-volume text-amberFlame"></i> 8879546412
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY GLASSMORPHIC NAVIGATION -->
+  <header id="navbar" class="sticky top-0 z-30 backdrop-blur-md bg-parchment/85 border-b border-amber-900/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo & Monogram -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full bg-espresso text-parchment flex items-center justify-center border-2 border-caramel shadow-md group-hover:scale-105 transition-transform relative">
+          <span class="font-serif font-extrabold text-lg tracking-tighter text-amber-100">TGA</span>
+          <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-amberFlame text-white text-[9px] flex items-center justify-center shadow">
+            <i class="fa-solid fa-fire"></i>
+          </span>
+        </div>
+        <div>
+          <span class="font-serif font-bold text-xl sm:text-2xl text-espresso tracking-tight block leading-none">
+            The Grilled Affairs
+          </span>
+          <span class="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-caramel block mt-1">
+            Sandwich • Pasta • Coffee
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-roast">
+        <a href="#story" class="hover:text-amberFlame transition">Chef's Story</a>
+        <a href="#signatures" class="hover:text-amberFlame transition">Signatures</a>
+        <a href="#menu" class="hover:text-amberFlame transition">Full Menu</a>
+        <a href="#delivery-info" class="hover:text-amberFlame transition">Delivery & Location</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <!-- Quick Call Button (Mobile/Desktop) -->
+        <a href="tel:8879546412" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-full border border-espresso/15 bg-cream hover:bg-espresso hover:text-white text-espresso text-xs font-bold transition">
+          <i class="fa-solid fa-phone text-amberFlame"></i>
+          <span>Call Order</span>
+        </a>
+
+        <!-- Interactive Cart Button -->
+        <button onclick="toggleCart(true)" class="relative inline-flex items-center gap-2.5 bg-espresso hover:bg-roast text-parchment px-4 sm:px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm shadow-warm transition transform active:scale-95 cursor-pointer">
+          <i class="fa-solid fa-bag-shopping text-amberFlame text-base"></i>
+          <span>Your Order</span>
+          <span id="nav-cart-count" class="px-2 py-0.5 text-xs rounded-full bg-amberFlame text-white font-extrabold">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative pt-8 pb-16 md:py-20 overflow-hidden">
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-amber-400/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/3 -right-24 w-96 h-96 bg-sage/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sageLight border border-sage/30 text-espresso text-xs sm:text-sm font-semibold shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-amberFlame animate-ping"></span>
+            <span>By Chef Riddhi & Tushar Patil • Jogeshwari's Cloud Kitchen</span>
+          </div>
+
+          <h1 class="font-serif font-extrabold text-4xl sm:text-6xl lg:text-7xl text-espresso leading-[1.07] tracking-tight">
+            Good Food <br class="hidden sm:inline" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-espresso via-caramel to-amberFlame italic font-serif">
+              Brings People
+            </span>
+            Together <span class="text-zomato inline-block animate-bounce">❤️</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-roast/85 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            From commercial cafe kitchens to our warm home cloud kitchen in <strong>Shyamnagar, Jogeshwari</strong>. Indulge in golden-grilled big sandwiches, rich gourmet pastas, spicy Maharashtrian Thecha toast, and café-style cold coffees crafted with real chef mastery.
+          </p>
+
+          <div class="bg-cream/90 border border-caramel/30 rounded-2xl p-4 sm:p-5 max-w-xl mx-auto lg:mx-0 shadow-sm flex items-center gap-4 text-left">
+            <div class="w-12 h-12 rounded-xl bg-amberFlame/15 text-amberFlame flex items-center justify-center shrink-0 text-xl font-bold">
+              <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+            </div>
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-amberFlame block">New Upgrade Available</span>
+              <p class="text-xs sm:text-sm font-semibold text-espresso mt-0.5">
+                <strong>'THE GRILLED AFFAIRS' now in BIG SIZE!</strong> For the big appetite & the bigger cravings — toggle between <span class="underline decoration-caramel font-bold">Small</span> & <span class="underline decoration-caramel font-bold">Big</span> right on our menu!
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#menu" class="px-7 py-4 rounded-full bg-espresso hover:bg-roast text-parchment font-bold text-sm sm:text-base shadow-warm-lg hover:shadow-glow transition transform hover:-translate-y-0.5 flex items-center gap-3">
+              <span>Explore Interactive Menu</span>
+              <i class="fa-solid fa-arrow-down-long text-amberFlame"></i>
+            </a>
+            <a href="#story" class="px-6 py-4 rounded-full bg-white/80 hover:bg-white text-espresso border border-espresso/15 font-bold text-sm sm:text-base shadow-sm transition flex items-center gap-2.5">
+              <i class="fa-solid fa-hat-chef text-caramel"></i>
+              <span>Read Chef Riddhi's Story</span>
+            </a>
+          </div>
+
+          <div class="pt-4 grid grid-cols-3 gap-3 max-w-lg mx-auto lg:mx-0 border-t border-espresso/10">
+            <div class="text-center lg:text-left">
+              <div class="font-serif font-extrabold text-lg sm:text-xl text-espresso">100% Fresh</div>
+              <div class="text-xs text-roast/70">Made-to-Order</div>
+            </div>
+            <div class="text-center lg:text-left">
+              <div class="font-serif font-extrabold text-lg sm:text-xl text-amberFlame">₹30 – ₹280</div>
+              <div class="text-xs text-roast/70">Pocket-Friendly Gourmet</div>
+            </div>
+            <div class="text-center lg:text-left">
+              <div class="font-serif font-extrabold text-lg sm:text-xl text-zomato flex items-center justify-center lg:justify-start gap-1">
+                <span>Zomato</span> <i class="fa-solid fa-circle-check text-xs"></i>
+              </div>
+              <div class="text-xs text-roast/70">& Direct WhatsApp</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative flex items-center justify-center">
+          <div class="hidden sm:flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-warm border border-amber-900/10 absolute -top-4 -left-4 z-20 animate-float">
+            <span class="text-2xl">🥪</span>
+            <div>
+              <div class="text-xs font-extrabold text-espresso">Paneer Tandoori</div>
+              <div class="text-[11px] font-semibold text-amberFlame">Small ₹120 • Big ₹140</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-warm border border-amber-900/10 absolute -bottom-5 -left-2 z-20 animate-float-reverse">
+            <span class="text-2xl">🍝</span>
+            <div>
+              <div class="text-xs font-extrabold text-espresso">Pink Pasta Bowl</div>
+              <div class="text-[11px] font-semibold text-sage">With Nachos & Melted Cheese</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-warm border border-amber-900/10 absolute top-12 -right-4 z-20 animate-float">
+            <span class="text-2xl">🧋</span>
+            <div>
+              <div class="text-xs font-extrabold text-espresso">Hazelnut & Mocha</div>
+              <div class="text-[11px] font-semibold text-caramel">Café-Style Frappe</div>
+            </div>
+          </div>
+
+          <div class="relative w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] rounded-full bg-gradient-to-b from-[#FFFDF9] to-[#F6E9D2] p-3.5 shadow-warm-lg border-4 border-caramel/40 flex items-center justify-center group">
+            <div class="w-full h-full rounded-full border-[3px] border-caramel/80 p-5 flex flex-col items-center justify-between relative overflow-hidden">
+              <div class="flex flex-col items-center mt-1 relative">
+                <svg class="w-48 h-20 overflow-visible" viewBox="0 0 220 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M35 55 L105 12 L175 55" stroke="#4A2511" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="140" y="16" width="16" height="26" rx="2" fill="#4A2511"/>
+                  <rect x="137" y="13" width="22" height="6" rx="2" fill="#4A2511"/>
+                  <rect x="93" y="34" width="10" height="10" fill="#4A2511"/>
+                  <rect x="106" y="34" width="10" height="10" fill="#4A2511"/>
+                  <rect x="93" y="47" width="10" height="10" fill="#4A2511"/>
+                  <rect x="106" y="47" width="10" height="10" fill="#4A2511"/>
+                  <g class="animate-flame">
+                    <path d="M105 82 C92 82 88 69 96 58 C100 52 104 46 104 46 C104 46 116 55 117 66 C118 75 113 82 105 82 Z" fill="#EA580C"/>
+                    <path d="M105 82 C98 82 96 74 101 67 C103 63 105 60 105 60 C105 60 111 65 111 72 C111 78 109 82 105 82 Z" fill="#FACC15"/>
+                  </g>
+                  <g transform="translate(152, 22) rotate(18)">
+                    <path d="M10 30 C2 26 0 14 9 10 C12 2 24 0 30 7 C39 4 48 12 44 22 C50 27 46 36 37 36 L10 36 Z" fill="#FFFDF9" stroke="#4A2511" stroke-width="3.5"/>
+                    <rect x="11" y="34" width="26" height="8" rx="2" fill="#FFFDF9" stroke="#4A2511" stroke-width="3.5"/>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="text-center -mt-3 z-10">
+                <span class="font-script text-2xl sm:text-3xl text-roast block -mb-3 -ml-24 rotate-[-6deg]">The</span>
+                <div class="font-serif font-extrabold italic text-4xl sm:text-5xl text-espresso tracking-tight drop-shadow-sm">
+                  Grilled
+                </div>
+                <div class="font-serif font-bold italic text-2xl sm:text-3xl text-roast -mt-1">
+                  Affairs
+                </div>
+                <div class="w-36 h-1.5 bg-gradient-to-r from-transparent via-caramel to-transparent mx-auto mt-1 rounded-full"></div>
+              </div>
+
+              <div class="flex items-end justify-center gap-3 sm:gap-5 my-1 z-10">
+                <div class="flex flex-col items-center group-hover:scale-105 transition">
+                  <div class="w-16 h-14 sm:w-20 sm:h-16 rounded-xl bg-amber-100/90 border-2 border-caramel/50 flex items-center justify-center shadow-sm relative">
+                    <span class="absolute -top-3 left-4 w-0.5 h-3 bg-caramel/50 rounded-full animate-steam-1"></span>
+                    <span class="absolute -top-4 left-8 w-0.5 h-3.5 bg-caramel/50 rounded-full animate-steam-2"></span>
+                    <svg class="w-12 h-12 sm:w-14 sm:h-14" viewBox="0 0 64 64" fill="none">
+                      <polygon points="8,44 56,44 36,16" fill="#D97724" stroke="#432215" stroke-width="2.5" stroke-linejoin="round"/>
+                      <line x1="24" y1="34" x2="32" y2="26" stroke="#432215" stroke-width="2" stroke-linecap="round"/>
+                      <line x1="32" y1="37" x2="40" y2="29" stroke="#432215" stroke-width="2" stroke-linecap="round"/>
+                      <line x1="40" y1="40" x2="46" y2="34" stroke="#432215" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M8 44 Q16 50 24 45 T40 46 T56 44 L56 50 L8 50 Z" fill="#FACC15" stroke="#432215" stroke-width="2"/>
+                      <circle cx="20" cy="48" r="3" fill="#E23744"/>
+                      <circle cx="36" cy="48" r="3" fill="#6E8264"/>
+                      <rect x="8" y="49" width="48" height="6" rx="2" fill="#B45309" stroke="#432215" stroke-width="2"/>
+                    </svg>
+                  </div>
+                  <span class="text-[10px] font-bold text-roast mt-1">Sandwich</span>
+                </div>
+
+                <div class="flex flex-col items-center group-hover:scale-110 transition">
+                  <div class="w-20 h-16 sm:w-24 sm:h-18 rounded-2xl bg-amber-50 border-2 border-caramel/60 flex items-center justify-center shadow-md relative">
+                    <span class="absolute -top-4 left-9 w-0.5 h-3.5 bg-amberFlame/60 rounded-full animate-steam-3"></span>
+                    <svg class="w-16 h-14" viewBox="0 0 80 64" fill="none">
+                      <ellipse cx="40" cy="34" rx="28" ry="12" fill="#FDE68A" stroke="#432215" stroke-width="2"/>
+                      <rect x="24" y="28" width="12" height="5" rx="2" transform="rotate(-15 24 28)" fill="#F59E0B" stroke="#432215" stroke-width="1.5"/>
+                      <rect x="40" y="26" width="12" height="5" rx="2" transform="rotate(20 40 26)" fill="#F59E0B" stroke="#432215" stroke-width="1.5"/>
+                      <rect x="32" y="34" width="13" height="5" rx="2" transform="rotate(-8 32 34)" fill="#F59E0B" stroke="#432215" stroke-width="1.5"/>
+                      <circle cx="28" cy="36" r="3" fill="#E23744"/>
+                      <circle cx="50" cy="35" r="3" fill="#E23744"/>
+                      <path d="M36 24 Q40 16 45 24 Q40 28 36 24 Z" fill="#5C7457" stroke="#432215" stroke-width="1.5"/>
+                      <path d="M10 34 C12 52 68 52 70 34 Z" fill="#FFFDF9" stroke="#432215" stroke-width="2.5"/>
+                    </svg>
+                  </div>
+                  <span class="text-[10px] font-bold text-roast mt-1">Pasta</span>
+                </div>
+
+                <div class="flex flex-col items-center group-hover:scale-105 transition">
+                  <div class="w-14 h-16 sm:w-16 sm:h-18 rounded-xl bg-amber-100/90 border-2 border-caramel/50 flex items-center justify-center shadow-sm">
+                    <svg class="w-12 h-14" viewBox="0 0 54 68" fill="none">
+                      <line x1="34" y1="4" x2="29" y2="22" stroke="#2C150C" stroke-width="4" stroke-linecap="round"/>
+                      <path d="M14 24 C12 16 22 12 27 14 C32 10 42 15 40 24 Z" fill="#FFFDF9" stroke="#432215" stroke-width="2"/>
+                      <polygon points="14,24 40,24 36,60 18,60" fill="#9A5B32" stroke="#432215" stroke-width="2.2"/>
+                      <path d="M18 25 L20 38 M27 25 L26 44 M35 25 L33 36" stroke="#2C150C" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <span class="text-[10px] font-bold text-roast mt-1">Coffee</span>
+                </div>
+              </div>
+
+              <div class="text-center pb-1">
+                <p class="font-script text-base sm:text-lg text-espresso leading-tight">
+                  Made with Passion • Served with Love
+                </p>
+                <div class="flex items-center justify-center gap-2 text-espresso text-xs mt-0.5">
+                  <span class="w-6 h-[1.5px] bg-caramel"></span>
+                  <i class="fa-solid fa-heart text-roast text-[10px]"></i>
+                  <span class="w-6 h-[1.5px] bg-caramel"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFINITE ANIMATED CULINARY TICKER -->
+  <div class="bg-espresso text-parchment py-3.5 border-y-2 border-caramel/40 overflow-hidden select-none">
+    <div class="animate-marquee flex items-center gap-8 text-xs sm:text-sm font-bold tracking-wider uppercase">
+      <div class="flex items-center gap-8 shrink-0">
+        <span><i class="fa-solid fa-fire text-amberFlame mr-2"></i>Made with Passion, Served with Love ❤️</span>
+        <span>•</span>
+        <span>🥪 BIG SIZE Sandwiches Now Available!</span>
+        <span>•</span>
+        <span>🍝 Signature Pink Pasta Bowl with Crunchy Nachos</span>
+        <span>•</span>
+        <span>🌶️ Spicy Maharashtrian Thecha Toast</span>
+        <span>•</span>
+        <span>🧋 Cold Coffee • Hazelnut • Mocha • Caramel</span>
+        <span>•</span>
+        <span>🛵 Sat & Sun FREE Home Delivery Above ₹199 (1.5km Radius)</span>
+        <span>•</span>
+      </div>
+      <div class="flex items-center gap-8 shrink-0">
+        <span><i class="fa-solid fa-fire text-amberFlame mr-2"></i>Made with Passion, Served with Love ❤️</span>
+        <span>•</span>
+        <span>🥪 BIG SIZE Sandwiches Now Available!</span>
+        <span>•</span>
+        <span>🍝 Signature Pink Pasta Bowl with Crunchy Nachos</span>
+        <span>•</span>
+        <span>🌶️ Spicy Maharashtrian Thecha Toast</span>
+        <span>•</span>
+        <span>🧋 Cold Coffee • Hazelnut • Mocha • Caramel</span>
+        <span>•</span>
+        <span>🛵 Sat & Sun FREE Home Delivery Above ₹199 (1.5km Radius)</span>
+        <span>•</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHEF RIDDHI & TUSHAR PATIL'S STORY SECTION -->
+  <section id="story" class="py-16 sm:py-24 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+      <div class="bg-gradient-to-br from-[#FFFDF9] via-[#FDF6E9] to-[#F5E6CE] rounded-3xl p-6 sm:p-12 md:p-16 shadow-warm-lg border-2 border-caramel/30 relative overflow-hidden">
+        <svg class="w-28 h-28 text-roast/10 absolute -top-4 -left-4 rotate-[-15deg] pointer-events-none" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M20 65 C8 55 8 32 25 26 C30 10 55 8 65 22 C82 18 95 36 84 52 C92 60 85 74 72 74 L20 74 Z"/>
+          <rect x="24" y="76" width="48" height="12" rx="4"/>
+        </svg>
+        <svg class="w-32 h-32 text-sage/20 absolute -bottom-6 -right-6 rotate-12 pointer-events-none" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M50 10 C70 25 75 55 50 90 C25 55 30 25 50 10 Z"/>
+          <path d="M20 40 C40 45 50 65 45 85 C25 75 15 55 20 40 Z"/>
+        </svg>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
+          <div class="lg:col-span-5 flex flex-col items-center text-center bg-parchment/90 p-6 sm:p-8 rounded-2xl border border-caramel/25 shadow-md">
+            <div class="w-24 h-24 rounded-full bg-espresso text-parchment flex flex-col items-center justify-center border-4 border-caramel shadow-md mb-4">
+              <i class="fa-solid fa-utensils text-amberFlame text-lg mb-0.5"></i>
+              <span class="font-serif font-extrabold text-xl tracking-tight">TGA</span>
+            </div>
+
+            <span class="text-xs font-extrabold uppercase tracking-widest text-sage bg-sageLight px-3 py-1 rounded-full">
+              Founders & Culinary Soul
+            </span>
+
+            <h3 class="font-serif font-bold text-2xl text-espresso mt-3">
+              Chef Riddhi Patil <br/>
+              <span class="text-caramel text-lg font-medium">&amp; Tushar Patil</span>
+            </h3>
+
+            <p class="text-xs text-roast/75 mt-2">
+              <i class="fa-solid fa-location-dot text-amberFlame mr-1"></i>
+              Home Cloud Kitchen • Shyamnagar, Jogeshwari
+            </p>
+
+            <div class="w-full border-t border-espresso/10 my-5"></div>
+
+            <div class="grid grid-cols-2 gap-3 w-full text-left">
+              <div class="bg-cream/80 p-3 rounded-xl border border-espresso/5">
+                <i class="fa-solid fa-award text-amberFlame text-base mb-1"></i>
+                <div class="text-xs font-bold text-espresso">Pro Cafe Skills</div>
+                <div class="text-[11px] text-roast/70">Years of restaurant expertise</div>
+              </div>
+              <div class="bg-cream/80 p-3 rounded-xl border border-espresso/5">
+                <i class="fa-solid fa-heart text-zomato text-base mb-1"></i>
+                <div class="text-xs font-bold text-espresso">Home Hygiene</div>
+                <div class="text-[11px] text-roast/70">Crafted fresh with love</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-4 text-left">
+            <div class="inline-flex items-center gap-2 text-caramel font-script text-2xl sm:text-3xl">
+              <span>From Cafe Kitchen to My Own Kitchen —</span>
+            </div>
+
+            <h2 class="font-serif font-extrabold text-2xl sm:text-4xl text-espresso leading-tight">
+              This is <span class="text-amberFlame">GRILLED AFFAIRS</span> ❤️
+            </h2>
+
+            <div class="space-y-4 text-roast/90 text-sm sm:text-base leading-relaxed font-medium bg-white/60 p-5 sm:p-6 rounded-2xl border border-caramel/20 shadow-inner">
+              <p class="font-serif text-lg font-bold text-espresso">
+                “Hi, I'm <span class="text-caramel underline decoration-caramel/40">Chef Riddhi Patil</span>.
+              </p>
+              <p>
+                For years, I poured my heart into cafe &amp; restaurant kitchens, making everyone else's dream taste delicious. But the 9-to-6 grind, the long shifts away from home... it started getting too difficult.
+              </p>
+              <p>
+                So I decided — why not build my own dream with my own skills? And that's how <strong class="text-espresso">Grilled Affairs — by Riddhi &amp; Tushar Patil</strong> was born!
+              </p>
+              <p>
+                A small cloud kitchen from my home in <strong class="text-espresso">Jogeshwari</strong>, serving food made with real chef skills &amp; lots of love.”
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-4 pt-2">
+              <div class="font-script text-2xl text-caramel font-bold">
+                — Chef Riddhi &amp; Tushar Patil
+              </div>
+              <a href="#menu" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-espresso hover:text-amberFlame transition">
+                <span>Taste Our Dream Menu</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHEF'S SIGNATURE SPOTLIGHTS -->
+  <section id="signatures" class="py-10 sm:py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-amberFlame block">Most Loved Cravings</span>
+          <h2 class="font-serif font-extrabold text-3xl sm:text-4xl text-espresso mt-1">
+            Chef Riddhi's Signature Creations
+          </h2>
+        </div>
+        <p class="text-sm text-roast/75 max-w-md">
+          Handpicked customer favorites from our menu — prepared fresh to order with rich sauces, generous cheese pulls, and signature spice blends.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-gradient-to-br from-espresso to-roast text-parchment rounded-3xl p-6 sm:p-7 shadow-warm-lg relative overflow-hidden group flex flex-col justify-between">
+          <div class="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-amberFlame/20 blur-xl pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full bg-amberFlame text-white text-xs font-extrabold uppercase tracking-wider">
+                ★ Signature Bowl
+              </span>
+              <span class="font-serif font-extrabold text-2xl text-amber-300">₹280</span>
+            </div>
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform inline-block">🍝🧀</div>
+            <h3 class="font-serif font-bold text-2xl text-white">Pink Pasta Bowl</h3>
+            <p class="text-xs sm:text-sm text-amber-100/80 mt-2 leading-relaxed">
+              Creamy pink sauce penne loaded with exotic veggies, corn &amp; capsicum, topped with <strong>crunchy nachos &amp; melted cheese</strong>.
+            </p>
+          </div>
+          <button onclick="quickAddSignature('pasta-bowl-1')" class="mt-6 w-full py-3 rounded-xl bg-amberFlame hover:bg-amber-500 text-white font-bold text-sm transition flex items-center justify-center gap-2 shadow-md cursor-pointer">
+            <i class="fa-solid fa-plus"></i> Add Pink Pasta Bowl — ₹280
+          </button>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-warm border border-caramel/25 relative overflow-hidden group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full bg-sageLight text-espresso text-xs font-extrabold uppercase tracking-wider">
+                🔥 Big Appetite Favorite
+              </span>
+              <span class="font-serif font-extrabold text-xl text-espresso">₹120 / ₹140</span>
+            </div>
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform inline-block">🥪🔥</div>
+            <h3 class="font-serif font-bold text-2xl text-espresso">Paneer Tandoori Sandwich</h3>
+            <p class="text-xs sm:text-sm text-roast/80 mt-2 leading-relaxed">
+              Smoky marinated tandoori paneer cubes, crisp veggies, and molten cheese grilled between golden-buttered jumbo slices.
+            </p>
+          </div>
+          <button onclick="quickAddSignature('sand-10', 'Big')" class="mt-6 w-full py-3 rounded-xl bg-espresso hover:bg-roast text-parchment font-bold text-sm transition flex items-center justify-center gap-2 shadow-md cursor-pointer">
+            <i class="fa-solid fa-plus text-amberFlame"></i> Add BIG Size — ₹140
+          </button>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-warm border border-caramel/25 relative overflow-hidden group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full bg-amber-100 text-amberFlame text-xs font-extrabold uppercase tracking-wider">
+                🥚 Cafe Special
+              </span>
+              <span class="font-serif font-extrabold text-xl text-espresso">₹80 / ₹100</span>
+            </div>
+            <div class="text-4xl mb-3 group-hover:scale-110 transition-transform inline-block">🥪🥚</div>
+            <h3 class="font-serif font-bold text-2xl text-espresso">Japanese Egg Sandwich</h3>
+            <p class="text-xs sm:text-sm text-roast/80 mt-2 leading-relaxed">
+              Rich, pillowy, creamy Japanese-style Tamago egg filling layered generously inside soft or toasted bread. Available in Small &amp; Big!
+            </p>
+          </div>
+          <button onclick="quickAddSignature('egg-1', 'Big')" class="mt-6 w-full py-3 rounded-xl bg-espresso hover:bg-roast text-parchment font-bold text-sm transition flex items-center justify-center gap-2 shadow-md cursor-pointer">
+            <i class="fa-solid fa-plus text-amberFlame"></i> Add BIG Size — ₹100
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLETE INTERACTIVE MENU SECTION -->
+  <section id="menu" class="py-16 sm:py-20 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10 reveal">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full border-2 border-espresso bg-cream mb-3 shadow-sm">
+          <span class="font-serif font-extrabold text-xl text-espresso">TGA</span>
+        </div>
+        <h2 class="font-serif font-extrabold text-4xl sm:text-5xl text-espresso tracking-tight">
+          The Grilled Affair Menu
+        </h2>
+        <p class="text-xs sm:text-sm font-extrabold tracking-[0.25em] uppercase text-caramel mt-2">
+          SANDWICH • PASTA • COFFEE
+        </p>
+        <p class="text-sm text-roast/75 mt-3">
+          Select <strong>Small</strong> or <strong>Big</strong> size on any sandwich, customize with <strong>Extra Cheese (₹30)</strong> or <strong>Exotic Veggies (₹60)</strong>, and send your order directly on WhatsApp!
+        </p>
+      </div>
+
+      <div class="sticky top-20 z-20 bg-parchment/95 backdrop-blur-md py-4 border-y border-espresso/10 mb-8">
+        <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+          <div id="category-tabs" class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 no-scrollbar">
+            <button onclick="setCategory('ALL')" data-cat="ALL" class="cat-btn active-cat shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition cursor-pointer bg-espresso text-parchment shadow-sm">
+              All Items (26)
+            </button>
+            <button onclick="setCategory('SANDWICHES')" data-cat="SANDWICHES" class="cat-btn shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition cursor-pointer bg-cream hover:bg-espresso/10 text-espresso">
+              🥪 Sandwiches (10)
+            </button>
+            <button onclick="setCategory('EGG SANDWICHES')" data-cat="EGG SANDWICHES" class="cat-btn shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition cursor-pointer bg-cream hover:bg-espresso/10 text-espresso">
+              🥚 Egg Sandwiches (2)
+            </button>
+            <button onclick="setCategory('TOAST')" data-cat="TOAST" class="cat-btn shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition cursor-pointer bg-cream hover:bg-espresso/10 text-espresso">
+              🍞 Toast • 4 Pcs (3)
+            </button>
+            <button onclick="setCategory('PASTA')" data-cat="PASTA" class="cat-btn shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition cursor-pointer bg-cream hover:bg-espresso/10 text-espresso">
+              🍝 Pasta &amp; Bowl (4)
+            </button>
+            <button onclick="setCategory('COFFEE')" data-cat="COFFEE" class="cat-btn shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition cursor-pointer bg-cream hover:bg-espresso/10 text-espresso">
+              🧋 Cold Coffee (5)
+            </button>
+            <button onclick="setCategory('ADD-ONS')" data-cat="ADD-ONS" class="cat-btn shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition cursor-pointer bg-cream hover:bg-espresso/10 text-espresso">
+              ➕ Add-Ons (2)
+            </button>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="relative flex-1 sm:w-60">
+              <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-roast/50 text-xs"></i>
+              <input 
+                id="menu-search" 
+                type="text" 
+                oninput="handleSearch(this.value)"
+                placeholder="Search sandwich, pasta, thecha..." 
+                class="w-full pl-9 pr-4 py-2 rounded-full bg-white border border-espresso/15 text-xs sm:text-sm text-espresso focus:outline-none focus:border-caramel"
+              />
+            </div>
+
+            <button 
+              id="veg-only-btn" 
+              onclick="toggleVegOnly()" 
+              class="px-3.5 py-2 rounded-full border border-espresso/15 bg-white text-xs font-bold text-espresso flex items-center gap-2 hover:border-green-600 transition shrink-0 cursor-pointer"
+            >
+              <span class="w-3.5 h-3.5 border border-green-700 flex items-center justify-center rounded-sm">
+                <span class="w-2 h-2 rounded-full bg-green-600"></span>
+              </span>
+              <span>Veg Only</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="menu-sections-container" class="space-y-12"></div>
+    </div>
+  </section>
+
+  <!-- DELIVERY RULES, ADDRESS & ZOMATO SECTION -->
+  <section id="delivery-info" class="py-16 sm:py-20 bg-cream/70 border-t border-espresso/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="px-3.5 py-1 rounded-full bg-sageLight text-espresso text-xs font-extrabold uppercase tracking-wider">
+          Order &amp; Pickup Information
+        </span>
+        <h2 class="font-serif font-extrabold text-3xl sm:text-4xl text-espresso mt-2">
+          How to Get Your Grilled Affair
+        </h2>
+        <p class="text-sm text-roast/75 mt-2">
+          Direct orders via Phone/WhatsApp or find us live on Zomato!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div class="bg-parchment rounded-3xl p-6 sm:p-8 shadow-warm border border-caramel/25 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-sageLight text-espresso flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-location-dot text-sage"></i>
+            </div>
+            <h3 class="font-serif font-bold text-2xl text-espresso">Kitchen Address</h3>
+            <p class="text-sm sm:text-base font-semibold text-roast mt-2 leading-relaxed">
+              502/C Wing, Ashtavinayak Heights,<br/>
+              Shyamnagar, Jogeshwari, Mumbai
+            </p>
+
+            <div class="mt-6 pt-5 border-t border-espresso/10 space-y-3">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-calendar-days text-caramel mt-1"></i>
+                <div>
+                  <span class="text-xs font-extrabold uppercase tracking-wider text-caramel block">Weekdays (Mon – Fri)</span>
+                  <span class="text-sm font-bold text-espresso">Pickup by Yourself (Self-Pickup)</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-truck-fast text-sage mt-1"></i>
+                <div>
+                  <span class="text-xs font-extrabold uppercase tracking-wider text-sage block">Sat / Sun Special</span>
+                  <span class="text-sm font-bold text-espresso">Free Delivery Above ₹199 in 1.5km radius</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a 
+            href="https://www.google.com/maps/search/?api=1&query=Ashtavinayak+Heights+Shyamnagar+Jogeshwari+Mumbai" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="mt-6 inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-cream hover:bg-espresso hover:text-white text-espresso font-bold text-xs sm:text-sm transition border border-espresso/10"
+          >
+            <i class="fa-solid fa-map-location-dot"></i> Open in Google Maps
+          </a>
+        </div>
+
+        <div class="bg-espresso text-parchment rounded-3xl p-6 sm:p-8 shadow-warm-lg border-2 border-caramel/50 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-amberFlame/15 rounded-full blur-2xl pointer-events-none"></div>
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amberFlame text-white text-xs font-extrabold uppercase tracking-wider mb-5">
+              <i class="fa-solid fa-truck-fast"></i> Please Note
+            </div>
+            <h3 class="font-serif font-bold text-2xl sm:text-3xl text-white">
+              Saturday &amp; Sunday
+            </h3>
+            <p class="text-base sm:text-lg font-bold text-amber-300 mt-1">
+              Free Home Delivery above ₹199
+            </p>
+            <p class="text-xs text-amber-100/80 mt-1">
+              Valid within a 1.5 km radius around Shyamnagar, Jogeshwari.
+            </p>
+
+            <div class="mt-6 pt-6 border-t border-white/15">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-amber-300 block mb-3">
+                <i class="fa-solid fa-phone-volume mr-1"></i> For Orders Call or WhatsApp:
+              </span>
+              <div class="space-y-2.5">
+                <a href="tel:8879546412" class="flex items-center justify-between p-3 rounded-xl bg-white/10 hover:bg-white/20 transition">
+                  <span class="font-serif font-bold text-lg tracking-wide text-white">8879546412</span>
+                  <span class="text-xs bg-amberFlame px-2.5 py-1 rounded-full font-bold">Call Now</span>
+                </a>
+                <a href="tel:9082260132" class="flex items-center justify-between p-3 rounded-xl bg-white/10 hover:bg-white/20 transition">
+                  <span class="font-serif font-bold text-lg tracking-wide text-white">9082260132</span>
+                  <span class="text-xs bg-amberFlame px-2.5 py-1 rounded-full font-bold">Call Now</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="toggleCart(true)" class="mt-6 w-full py-3.5 rounded-xl bg-green-600 hover:bg-green-500 text-white font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-md cursor-pointer">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Build WhatsApp Order Now
+          </button>
+        </div>
+
+        <div class="bg-parchment rounded-3xl p-6 sm:p-8 shadow-warm border border-caramel/25 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-roast/70 block mb-3">
+              Online Delivery Partner
+            </span>
+            <div class="bg-zomato text-white rounded-2xl p-6 text-center shadow-md relative overflow-hidden group">
+              <div class="text-xs uppercase tracking-widest font-bold opacity-90 mb-1">Find us on</div>
+              <div class="font-sans font-black italic text-4xl tracking-tight">zomato</div>
+              <div class="mt-3 inline-block bg-white/20 backdrop-blur-sm px-3.5 py-1 rounded-full text-xs font-bold">
+                Search: "The Grilled Affair"
+              </div>
+            </div>
+
+            <div class="mt-6 p-5 rounded-2xl bg-cream border border-espresso/10">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 p-0.5 shrink-0">
+                  <div class="w-full h-full bg-espresso rounded-full flex items-center justify-center text-white text-xs font-serif font-bold">
+                    TGA
+                  </div>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-roast/70">Follow Our Culinary Journey</div>
+                  <div class="text-sm font-extrabold text-espresso">@the_grilled_affair</div>
+                </div>
+              </div>
+              <p class="text-xs text-roast/80 mt-3">
+                Tag us in your stories with your cheesy pulls, pink pasta bowls &amp; cold coffee moments!
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-2 gap-3">
+            <a 
+              href="https://www.zomato.com/mumbai" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="py-3 px-4 rounded-xl bg-zomato hover:bg-red-700 text-white font-bold text-xs sm:text-sm text-center transition shadow-sm"
+            >
+              Order on Zomato
+            </a>
+            <a 
+              href="https://www.instagram.com/the_grilled_affair/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="py-3 px-4 rounded-xl bg-espresso hover:bg-roast text-white font-bold text-xs sm:text-sm text-center transition shadow-sm flex items-center justify-center gap-1.5"
+            >
+              <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-espresso text-parchment pt-14 pb-24 sm:pb-14 border-t-4 border-caramel">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-white/10">
+        <div class="flex items-center gap-4 text-center md:text-left">
+          <div class="w-14 h-14 rounded-full bg-parchment text-espresso flex items-center justify-center font-serif font-extrabold text-2xl border-2 border-caramel shrink-0">
+            TGA
+          </div>
+          <div>
+            <h4 class="font-serif font-bold text-2xl text-white">The Grilled Affairs</h4>
+            <p class="text-xs text-amber-200/80">By Chef Riddhi &amp; Tushar Patil • Made with Passion, Served with Love ❤️</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm font-semibold">
+          <a href="#story" class="hover:text-amberFlame transition">Our Story</a>
+          <span>•</span>
+          <a href="#menu" class="hover:text-amberFlame transition">Menu</a>
+          <span>•</span>
+          <a href="#delivery-info" class="hover:text-amberFlame transition">Shyamnagar, Jogeshwari</a>
+          <span>•</span>
+          <a href="tel:8879546412" class="text-amber-300 hover:underline">8879546412 / 9082260132</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-amber-100/60 gap-2">
+        <p>© 2026 The Grilled Affairs (TGA). All rights reserved.</p>
+        <p>502/C Wing, Ashtavinayak Heights, Shyamnagar, Jogeshwari, Mumbai</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING BOTTOM CART BAR -->
+  <div id="floating-cart-bar" class="fixed bottom-4 inset-x-4 max-w-lg mx-auto z-30 hidden">
+    <button onclick="toggleCart(true)" class="w-full bg-espresso hover:bg-roast text-parchment p-4 rounded-2xl shadow-warm-lg border-2 border-caramel flex items-center justify-between transition transform active:scale-98 cursor-pointer">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amberFlame text-white flex items-center justify-center font-extrabold text-sm" id="float-cart-count">
+          0
+        </div>
+        <div class="text-left">
+          <div class="text-xs text-amber-200 font-semibold" id="float-delivery-hint">View Your Order Bag</div>
+          <div class="text-sm sm:text-base font-extrabold text-white" id="float-cart-total">₹0</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 bg-amberFlame px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold text-white">
+        <span>Checkout</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+    </button>
+  </div>
+
+  <!-- SLIDE-OVER SMART CART & WHATSAPP ORDER DRAWER -->
+  <div id="cart-Modal" class="fixed inset-0 z-50 hidden">
+    <div onclick="toggleCart(false)" class="fixed inset-0 bg-espresso/60 backdrop-blur-sm transition-opacity"></div>
+
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-md bg-parchment shadow-2xl flex flex-col justify-between">
+        <div class="p-5 sm:p-6 bg-espresso text-parchment flex items-center justify-between border-b border-caramel/40">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amberFlame/20 border border-amberFlame text-amberFlame flex items-center justify-center">
+              <i class="fa-solid fa-fire-burner"></i>
+            </div>
+            <div>
+              <h3 class="font-serif font-bold text-lg sm:text-xl text-white">Your Grilled Affair Bag</h3>
+              <p class="text-[11px] text-amber-200/80">Freshly prepared by Chef Riddhi Patil</p>
+            </div>
+          </div>
+          <button onclick="toggleCart(false)" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition cursor-pointer">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="bg-cream px-5 py-3.5 border-b border-espresso/10">
+          <div class="flex items-center justify-between text-xs font-bold mb-1.5">
+            <span id="delivery-progress-text" class="text-espresso">
+              Add ₹199 for FREE Weekend Delivery (1.5km)
+            </span>
+            <span id="delivery-progress-pct" class="text-amberFlame">0%</span>
+          </div>
+          <div class="w-full h-2 bg-espresso/10 rounded-full overflow-hidden">
+            <div id="delivery-progress-bar" class="h-full bg-gradient-to-r from-caramel to-green-600 transition-all duration-500" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-5 space-y-5">
+          <div id="cart-items-list" class="space-y-3"></div>
+
+          <div id="cart-addons-upsell" class="bg-white rounded-2xl p-4 border border-caramel/25 shadow-sm hidden">
+            <div class="text-xs font-extrabold uppercase tracking-wider text-caramel mb-2.5 flex items-center gap-1.5">
+              <i class="fa-solid fa-sparkles"></i> Make It Extra Loaded (Add-Ons)
+            </div>
+            <div class="grid grid-cols-2 gap-2.5">
+              <button onclick="addCartItem('addon-1', 'Regular')" class="p-2.5 rounded-xl bg-cream hover:bg-espresso hover:text-white text-espresso text-left transition border border-espresso/10 cursor-pointer">
+                <div class="text-xs font-bold">🧀 Extra Cheese</div>
+                <div class="text-[11px] font-extrabold text-amberFlame mt-0.5">+ ₹30</div>
+              </button>
+              <button onclick="addCartItem('addon-2', 'Regular')" class="p-2.5 rounded-xl bg-cream hover:bg-espresso hover:text-white text-espresso text-left transition border border-espresso/10 cursor-pointer">
+                <div class="text-xs font-bold">🥦 Exotic Veggies</div>
+                <div class="text-[11px] font-extrabold text-amberFlame mt-0.5">+ ₹60</div>
+              </button>
+            </div>
+          </div>
+
+          <div id="cart-customer-form" class="bg-white rounded-2xl p-4 border border-espresso/10 space-y-3 hidden">
+            <div class="text-xs font-extrabold uppercase tracking-wider text-espresso">
+              Order Preferences
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <button type="button" onclick="setOrderType('Self-Pickup (Shyamnagar)')" id="type-pickup-btn" class="py-2 px-3 rounded-xl text-xs font-bold border-2 border-espresso bg-espresso text-white transition cursor-pointer">
+                🏃 Self-Pickup
+              </button>
+              <button type="button" onclick="setOrderType('Weekend Home Delivery (1.5km)')" id="type-delivery-btn" class="py-2 px-3 rounded-xl text-xs font-bold border border-espresso/20 bg-cream text-espresso transition cursor-pointer">
+                🛵 Sat/Sun Delivery
+              </button>
+            </div>
+
+            <input id="cust-name" type="text" placeholder="Your Name (optional)" class="w-full px-3.5 py-2 rounded-xl bg-parchment border border-espresso/15 text-xs text-espresso focus:outline-none focus:border-caramel" />
+            <input id="cust-address" type="text" placeholder="Address / Landmark (if Weekend Delivery within 1.5km)" class="w-full px-3.5 py-2 rounded-xl bg-parchment border border-espresso/15 text-xs text-espresso focus:outline-none focus:border-caramel" />
+            <input id="cust-notes" type="text" placeholder="Cooking notes (e.g., extra spicy, less butter)..." class="w-full px-3.5 py-2 rounded-xl bg-parchment border border-espresso/15 text-xs text-espresso focus:outline-none focus:border-caramel" />
+
+            <div class="pt-1">
+              <label class="text-[11px] font-bold text-roast/70 block mb-1">Send WhatsApp Order To:</label>
+              <div class="grid grid-cols-2 gap-2">
+                <button type="button" onclick="setPhoneTarget('918879546412')" id="phone-btn-1" class="py-1.5 px-2 rounded-lg text-xs font-bold bg-sageLight border border-sage text-espresso cursor-pointer">
+                  📱 8879546412
+                </button>
+                <button type="button" onclick="setPhoneTarget('919082260132')" id="phone-btn-2" class="py-1.5 px-2 rounded-lg text-xs font-bold bg-cream border border-espresso/10 text-roast cursor-pointer">
+                  📱 9082260132
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 bg-white border-t border-espresso/10 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-roast/70 uppercase tracking-wider">Total Payable</span>
+            <span id="cart-subtotal" class="font-serif font-extrabold text-2xl text-espresso">₹0</span>
+          </div>
+
+          <div class="grid grid-cols-1 gap-2">
+            <button onclick="sendWhatsAppOrder()" class="w-full py-3.5 px-4 rounded-xl bg-green-600 hover:bg-green-500 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2 cursor-pointer">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Order Now via WhatsApp</span>
+            </button>
+            <button onclick="copyOrderSummary()" class="w-full py-2.5 px-4 rounded-xl bg-cream hover:bg-espresso hover:text-white text-espresso font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer">
+              <i class="fa-regular fa-copy"></i>
+              <span>Copy Order Summary Text</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast-notification" class="fixed top-24 right-4 z-50 pointer-events-none opacity-0 translate-y-[-10px] transition-all duration-300">
+    <div class="bg-espresso text-parchment px-4 py-3 rounded-2xl shadow-warm-lg border border-caramel flex items-center gap-3 text-xs sm:text-sm font-bold">
+      <i class="fa-solid fa-circle-check text-green-400 text-base"></i>
+      <span id="toast-message">Added to your order!</span>
+    </div>
+  </div>
+
+  <script>
+    const MENU_ITEMS = [
+      { id: 'sand-1', name: 'Chutney Cheese Sandwich', category: 'SANDWICHES', isVeg: true, hasSizes: true, prices: { Small: 50, Big: 70 }, defaultSize: 'Big', badge: 'Classic', desc: 'Fresh signature green coriander-mint chutney layered with generous grated cheese.' },
+      { id: 'sand-2', name: 'Tomato Cucumber Crunch Sandwich', category: 'SANDWICHES', isVeg: true, hasSizes: true, prices: { Small: 30, Big: 50 }, defaultSize: 'Big', badge: 'Light & Fresh', desc: 'Crisp garden cucumber and juicy tomato slices with house sandwich masala & butter.' },
+      { id: 'sand-3', name: 'Vegetable Sandwich', category: 'SANDWICHES', isVeg: true, hasSizes: true, prices: { Small: 50, Big: 70 }, defaultSize: 'Big', badge: '', desc: 'Wholesome layered farm-fresh veggies, zesty green chutney, and special spice sprinkle.' },
+      { id: 'sand-4', name: 'Vegetable Cheese Sandwich', category: 'SANDWICHES', isVeg: true, hasSizes: true, prices: { Small: 70, Big: 90 }, defaultSize: 'Big', badge: 'Popular', desc: 'Loaded crunchy vegetables topped with a thick blanket of creamy cheese.' },
+      { id: 'sand-5', name: 'Vegetable Toast Sandwich', category: 'SANDWICHES', isVeg: true, hasSizes: true, prices: { Small: 60, Big: 80 }, defaultSize: 'Big', badge: '', desc: 'Golden-grilled crispy toast stuffed with spiced veggies and tangy house chutney.' },
+      { id: 'sand-6', name: 'Vegetable Cheese Toast Sandwich', category: 'SANDWICHES', isVeg: true, hasSizes: true, prices: { Small: 80, Big: 100 }, defaultSize: 'Big', badge: 'Bestseller', desc: 'Hot, crunchy grilled vegetable sandwich oozing with melted cheese inside out.' },
+      { id: 'sand-7', name: 'Masala Toast Sandwich', category: 'SANDWICHES', isVeg: true, hasSizes: true, prices: { Small: 80, Big: 100 }, defaultSize: 'Big', badge: 'Mumbai Style', desc: 'Spiced potato bhaji, onions, capsicum, and tangy chutneys grilled to perfection.' },
+      { id: 'sand-8', name: 'Masala Cheese Toast Sandwich', category: 'SANDWICHES', isVeg: true, hasSizes: true, prices: { Small: 90, Big: 110 }, defaultSize: 'Big', badge: 'Must Try', desc: 'Flavor-packed Mumbai masala toast upgraded with rich, gooey melted cheese.' },
+      { id: 'sand-9', name: 'Cheese Corn Sandwich', category: 'SANDWICHES', isVeg: true, hasSizes: true, prices: { Small: 80, Big: 100 }, defaultSize: 'Big', badge: 'Kids & Cafe Fav', desc: 'Sweet golden corn kernels folded into seasoned molten cheese and herbs, grilled crisp.' },
+      { id: 'sand-10', name: 'Paneer Tandoori Sandwich', category: 'SANDWICHES', isVeg: true, hasSizes: true, prices: { Small: 120, Big: 140 }, defaultSize: 'Big', badge: "Chef's Special 🔥", desc: 'Smoky tandoori-spiced paneer cubes, crunchy peppers & melted cheese in jumbo grilled bread.' },
+      { id: 'egg-1', name: 'Japanese Egg Sandwich', category: 'EGG SANDWICHES', isVeg: false, hasSizes: true, prices: { Small: 80, Big: 100 }, defaultSize: 'Big', badge: 'Trending 🥚', desc: 'Ultra-creamy, velvety Japanese Tamago-style seasoned egg salad tucked in soft/toasted bread.' },
+      { id: 'egg-2', name: 'Toast Scrambled Egg Sandwich', category: 'EGG SANDWICHES', isVeg: false, hasSizes: true, prices: { Small: 120, Big: 140 }, defaultSize: 'Big', badge: 'Protein Packed', desc: 'Fluffy chef-style butter scrambled eggs with herbs and cheese inside golden-grilled toast.' },
+      { id: 'toast-1', name: 'Chilli Cheese Toast (4 Pieces)', category: 'TOAST', isVeg: true, hasSizes: false, price: 50, badge: '4 Pieces', desc: 'Crispy open toast topped with melted cheese, fiery green chillies, and bell peppers.' },
+      { id: 'toast-2', name: 'Thecha Toast (4 Pieces)', category: 'TOAST', isVeg: true, hasSizes: false, price: 60, badge: '🌶️ Zesty Special', desc: 'Bold Maharashtrian green chilli-garlic-peanut Thecha fused with rich melted cheese on 4 crisp toasts.' },
+      { id: 'toast-3', name: 'Cheese Garlic Bread (4 Pieces)', category: 'TOAST', isVeg: true, hasSizes: false, price: 60, badge: '4 Pieces', desc: 'Aromatic roasted garlic herb butter and gooey mozzarella-cheddar blend baked on 4 slices.' },
+      { id: 'pasta-1', name: 'White Sauce Pasta', category: 'PASTA', isVeg: true, hasSizes: false, price: 220, badge: 'Includes Corn & Capsicum', desc: 'Silky béchamel cheese sauce tossed with penne, sweet corn, crunchy capsicum, and Italian herbs.' },
+      { id: 'pasta-2', name: 'Pink Sauce Pasta', category: 'PASTA', isVeg: true, hasSizes: false, price: 220, badge: 'Includes Corn & Capsicum', desc: 'The best of both worlds — tangy tomato marinara blended with rich creamy white sauce, corn & capsicum.' },
+      { id: 'pasta-3', name: 'Peri Peri Sauce Pasta', category: 'PASTA', isVeg: true, hasSizes: false, price: 220, badge: 'Spicy & Creamy', desc: 'Zesty, fiery Peri-Peri infused creamy sauce with penne pasta, sweet corn & capsicum.' },
+      { id: 'pasta-bowl-1', name: 'Pink Pasta Bowl', category: 'PASTA', isVeg: true, hasSizes: false, price: 280, badge: '★ Signature Pasta Bowl', desc: 'Creamy pink sauce penne with exotic veggies, topped with crunchy nachos & melted cheese.' },
+      { id: 'coffee-1', name: 'Cold Coffee', category: 'COFFEE', isVeg: true, hasSizes: false, price: 80, badge: 'Café Classic', desc: 'Thick, frothy, chilled signature cold coffee blended to creamy café perfection.' },
+      { id: 'coffee-2', name: 'Hazelnut Coffee', category: 'COFFEE', isVeg: true, hasSizes: false, price: 120, badge: 'Bestseller 🧋', desc: 'Rich roasted hazelnut aroma blended into velvety cold-brewed café frappe.' },
+      { id: 'coffee-3', name: 'Mocha Coffee', category: 'COFFEE', isVeg: true, hasSizes: false, price: 120, badge: 'Chocolatey', desc: 'Indulgent fusion of bold espresso and rich dark chocolate sauce served chilled.' },
+      { id: 'coffee-4', name: 'Vanilla Coffee', category: 'COFFEE', isVeg: true, hasSizes: false, price: 100, badge: 'Smooth', desc: 'Fragrant Madagascar vanilla notes whipped into chilled, creamy cold coffee.' },
+      { id: 'coffee-5', name: 'Caramel Coffee', category: 'COFFEE', isVeg: true, hasSizes: false, price: 120, badge: 'Rich Drizzle', desc: 'Buttery golden caramel swirled with frothy cold coffee for a decadent treat.' },
+      { id: 'addon-1', name: 'Extra Cheese (Add-On)', category: 'ADD-ONS', isVeg: true, hasSizes: false, price: 30, badge: 'Customization', desc: 'Add an extra generous layer of gooey cheese to any sandwich, toast, or pasta.' },
+      { id: 'addon-2', name: 'Exotic Vegetables (Add-On)', category: 'ADD-ONS', isVeg: true, hasSizes: false, price: 60, badge: 'Broccoli, Zucchini, Baby Corn, Mushroom', desc: 'Upgrade your pasta or sandwich with sautéed Broccoli, Zucchini, Baby Corn & Mushroom.' }
+    ];
+
+    let selectedSizes = {};
+    MENU_ITEMS.forEach(item => { if (item.hasSizes) selectedSizes[item.id] = item.defaultSize || 'Big'; });
+
+    let activeCategory = 'ALL';
+    let searchQuery = '';
+    let vegOnly = false;
+    let cart = [];
+    let orderType = 'Self-Pickup (Shyamnagar)';
+    let targetWhatsAppNumber = '918879546412';
+    let simulatedWeekend = null;
+
+    function updateDayBanner() {
+      const now = new Date();
+      const realIsWeekend = (now.getDay() === 0 || now.getDay() === 6);
+      const isWeekend = simulatedWeekend !== null ? simulatedWeekend : realIsWeekend;
+      const bannerEl = document.getElementById('live-day-banner');
+      const simLabel = document.getElementById('sim-day-label');
+      if (isWeekend) {
+        bannerEl.innerHTML = `🎉 <strong>It's the Weekend (Sat/Sun)!</strong> Enjoy <span class="underline decoration-amberFlame font-extrabold text-white">FREE Home Delivery above ₹199</span> within 1.5km of Shyamnagar!`;
+        simLabel.textContent = 'Preview Weekday Mode';
+      } else {
+        bannerEl.innerHTML = `📍 <strong>Weekday Mode (Mon–Fri):</strong> Self-Pickup at 502/C Ashtavinayak Heights, Shyamnagar • <span class="text-amber-300">(Sat/Sun: Free Delivery > ₹199 in 1.5km)</span>`;
+        simLabel.textContent = 'Preview Weekend Mode';
+      }
+    }
+
+    function toggleDaySimulation() {
+      const now = new Date();
+      const realIsWeekend = (now.getDay() === 0 || now.getDay() === 6);
+      simulatedWeekend = simulatedWeekend === null ? !realIsWeekend : !simulatedWeekend;
+      updateDayBanner();
+      showToast(simulatedWeekend ? 'Switched to Weekend Free Delivery Preview!' : 'Switched to Weekday Self-Pickup Preview!');
+    }
+
+    const CATEGORY_META = [
+      { key: 'SANDWICHES', title: 'SANDWICHES', icon: '🥪', subtitle: 'Available in Small & BIG Size — Freshly grilled to golden perfection' },
+      { key: 'EGG SANDWICHES', title: 'EGG SANDWICHES', icon: '🥚', subtitle: 'Available in Small & BIG Size — Rich, fluffy & protein-packed' },
+      { key: 'TOAST', title: 'TOAST (4 Pieces)', icon: '🍞', subtitle: '4 crispy golden pieces per serving' },
+      { key: 'PASTA', title: 'PASTA & PASTA BOWL', icon: '🍝', subtitle: 'Note: All pasta includes sweet corn & crunchy capsicum' },
+      { key: 'COFFEE', title: 'COFFEE', icon: '🧋', subtitle: 'Thick, chilled café-style cold coffees' },
+      { key: 'ADD-ONS', title: 'ADD-ONS', icon: '➕', subtitle: 'Customize your dish with extra cheese or sautéed exotic veggies' }
+    ];
+
+    function renderMenu() {
+      const container = document.getElementById('menu-sections-container');
+      container.innerHTML = '';
+      const categoriesToRender = activeCategory === 'ALL' ? CATEGORY_META : CATEGORY_META.filter(c => c.key === activeCategory);
+      let totalRendered = 0;
+
+      categoriesToRender.forEach(catMeta => {
+        const items = MENU_ITEMS.filter(item => {
+          if (item.category !== catMeta.key) return false;
+          if (vegOnly && !item.isVeg) return false;
+          if (searchQuery.trim() !== '') {
+            const q = searchQuery.toLowerCase();
+            return item.name.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q) || (item.badge && item.badge.toLowerCase().includes(q));
+          }
+          return true;
+        });
+        if (items.length === 0) return;
+        totalRendered += items.length;
+
+        const sectionEl = document.createElement('div');
+        sectionEl.className = 'space-y-6';
+        sectionEl.innerHTML = `
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-espresso/10 pb-3">
+            <div class="inline-flex items-center gap-3 sage-brush px-5 py-2.5 self-start">
+              <span class="text-2xl">${catMeta.icon}</span>
+              <h3 class="font-serif font-extrabold text-xl sm:text-2xl text-espresso tracking-wide">${catMeta.title}</h3>
+            </div>
+            <p class="text-xs sm:text-sm font-semibold text-roast/75 italic">${catMeta.subtitle}</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="grid-${catMeta.key.replace(/\s+/g, '-')}"></div>
+        `;
+        container.appendChild(sectionEl);
+        const gridEl = sectionEl.querySelector(`#grid-${catMeta.key.replace(/\s+/g, '-')}`);
+
+        items.forEach(item => {
+          const currentSize = item.hasSizes ? (selectedSizes[item.id] || 'Big') : 'Regular';
+          const currentPrice = item.hasSizes ? item.prices[currentSize] : item.price;
+          const card = document.createElement('div');
+          card.className = 'bg-white rounded-2xl p-5 shadow-warm border border-caramel/20 hover:border-caramel transition-all duration-300 flex flex-col justify-between group';
+
+          const dietBadge = item.isVeg
+            ? `<span class="w-4 h-4 border border-green-700 flex items-center justify-center rounded-sm shrink-0" title="100% Vegetarian"><span class="w-2 h-2 rounded-full bg-green-600"></span></span>`
+            : `<span class="w-4 h-4 border border-amber-700 flex items-center justify-center rounded-sm shrink-0" title="Contains Egg"><span class="w-2 h-2 rounded-full bg-amber-600"></span></span>`;
+
+          const sizeToggleHTML = item.hasSizes ? `
+            <div class="mt-4 bg-cream p-1 rounded-xl grid grid-cols-2 gap-1 border border-espresso/10">
+              <button type="button" onclick="selectItemSize('${item.id}', 'Small')" class="py-1.5 px-2 rounded-lg text-xs font-bold transition cursor-pointer ${currentSize === 'Small' ? 'bg-espresso text-white shadow-sm' : 'text-roast hover:bg-white/60'}">Small • ₹${item.prices.Small}</button>
+              <button type="button" onclick="selectItemSize('${item.id}', 'Big')" class="py-1.5 px-2 rounded-lg text-xs font-bold transition cursor-pointer ${currentSize === 'Big' ? 'bg-amberFlame text-white shadow-sm' : 'text-roast hover:bg-white/60'}">BIG • ₹${item.prices.Big}</button>
+            </div>
+          ` : '';
+
+          card.innerHTML = `
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  ${dietBadge}
+                  ${item.badge ? `<span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-full bg-sageLight text-espresso">${item.badge}</span>` : ''}
+                </div>
+                <div class="text-right">
+                  <span id="price-${item.id}" class="font-serif font-extrabold text-xl text-espresso">₹${currentPrice}</span>
+                </div>
+              </div>
+              <h4 class="font-serif font-bold text-lg text-espresso mt-2.5 group-hover:text-amberFlame transition-colors">${item.name}</h4>
+              <p class="text-xs text-roast/75 mt-1.5 leading-relaxed">${item.desc}</p>
+              ${sizeToggleHTML}
+            </div>
+            <div class="mt-5 pt-3 border-t border-espresso/10 flex items-center justify-between gap-2">
+              <button type="button" onclick="addCartItem('${item.id}', '${currentSize}')" class="w-full py-2.5 px-4 rounded-xl bg-espresso hover:bg-roast text-parchment font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-sm active:scale-95 cursor-pointer">
+                <i class="fa-solid fa-plus text-amberFlame"></i>
+                <span>Add ${item.hasSizes ? `(${currentSize})` : 'to Order'} — ₹${currentPrice}</span>
+              </button>
+            </div>
+          `;
+          gridEl.appendChild(card);
+        });
+      });
+
+      if (totalRendered === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 bg-white/70 rounded-3xl border border-espresso/10 p-8">
+            <div class="text-4xl mb-3">🥪</div>
+            <h4 class="font-serif font-bold text-xl text-espresso">No dishes matched your filter</h4>
+            <p class="text-xs sm:text-sm text-roast/70 mt-1">Try clearing your search or switching back to "All Items".</p>
+            <button onclick="resetMenuFilters()" class="mt-4 px-5 py-2.5 rounded-full bg-espresso text-white text-xs font-bold cursor-pointer">Reset Filters</button>
+          </div>
+        `;
+      }
+    }
+
+    function selectItemSize(itemId, size) { selectedSizes[itemId] = size; renderMenu(); }
+    function setCategory(cat) {
+      activeCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.className = btn.getAttribute('data-cat') === cat
+          ? 'cat-btn shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition cursor-pointer bg-espresso text-parchment shadow-sm'
+          : 'cat-btn shrink-0 px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition cursor-pointer bg-cream hover:bg-espresso/10 text-espresso';
+      });
+      renderMenu();
+    }
+    function handleSearch(val) { searchQuery = val; renderMenu(); }
+    function toggleVegOnly() {
+      vegOnly = !vegOnly;
+      const btn = document.getElementById('veg-only-btn');
+      btn.classList.toggle('bg-green-50', vegOnly);
+      btn.classList.toggle('border-green-600', vegOnly);
+      btn.classList.toggle('text-green-900', vegOnly);
+      renderMenu();
+    }
+    function resetMenuFilters() { searchQuery = ''; vegOnly = false; document.getElementById('menu-search').value = ''; setCategory('ALL'); }
+
+    function addCartItem(itemId, sizeOverride) {
+      const item = MENU_ITEMS.find(i => i.id === itemId);
+      if (!item) return;
+      const size = item.hasSizes ? (sizeOverride || selectedSizes[itemId] || 'Big') : 'Regular';
+      const unitPrice = item.hasSizes ? item.prices[size] : item.price;
+      const key = `${item.id}__${size}`;
+      const existing = cart.find(c => c.key === key);
+      if (existing) existing.qty += 1;
+      else cart.push({ key, id: item.id, name: item.name, size, hasSizes: item.hasSizes, unitPrice, qty: 1 });
+      updateCartUI();
+      showToast(`Added ${item.name} ${item.hasSizes ? `(${size})` : ''} to your bag!`);
+    }
+
+    function quickAddSignature(itemId, size = 'Regular') { addCartItem(itemId, size); toggleCart(true); }
+    function changeCartQty(key, delta) {
+      const idx = cart.findIndex(c => c.key === key);
+      if (idx === -1) return;
+      cart[idx].qty += delta;
+      if (cart[idx].qty <= 0) cart.splice(idx, 1);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
+      const subtotal = cart.reduce((sum, i) => sum + (i.unitPrice * i.qty), 0);
+      document.getElementById('nav-cart-count').textContent = totalQty;
+      document.getElementById('float-cart-count').textContent = totalQty;
+      document.getElementById('float-cart-total').textContent = `₹${subtotal}`;
+      document.getElementById('cart-subtotal').textContent = `₹${subtotal}`;
+      document.getElementById('floating-cart-bar').classList.toggle('hidden', totalQty === 0);
+
+      const threshold = 199;
+      const pct = Math.min(100, Math.round((subtotal / threshold) * 100));
+      document.getElementById('delivery-progress-bar').style.width = `${pct}%`;
+      document.getElementById('delivery-progress-pct').textContent = `${pct}%`;
+      const progressText = document.getElementById('delivery-progress-text');
+      const floatHint = document.getElementById('float-delivery-hint');
+      if (subtotal >= threshold) {
+        progressText.innerHTML = `<span class="text-green-700"><i class="fa-solid fa-circle-check"></i> Unlocked FREE Weekend Home Delivery (within 1.5km)!</span>`;
+        floatHint.textContent = '🎉 Free Weekend Delivery Unlocked!';
+      } else {
+        const diff = threshold - subtotal;
+        progressText.textContent = `Add ₹${diff} more for FREE Sat/Sun Delivery (within 1.5km)`;
+        floatHint.textContent = `Add ₹${diff} more for Free Weekend Delivery`;
+      }
+
+      const listEl = document.getElementById('cart-items-list');
+      const upsellEl = document.getElementById('cart-addons-upsell');
+      const formEl = document.getElementById('cart-customer-form');
+      if (cart.length === 0) {
+        listEl.innerHTML = `<div class="text-center py-12 px-4"><div class="w-16 h-16 rounded-full bg-cream mx-auto flex items-center justify-center text-2xl mb-3">🥪</div><h4 class="font-serif font-bold text-lg text-espresso">Your order bag is empty</h4><p class="text-xs text-roast/70 mt-1">Explore our Small & Big sandwiches, creamy pastas, and cold coffees to start your order.</p></div>`;
+        upsellEl.classList.add('hidden');
+        formEl.classList.add('hidden');
+        return;
+      }
+      upsellEl.classList.remove('hidden');
+      formEl.classList.remove('hidden');
+      listEl.innerHTML = cart.map(item => `
+        <div class="bg-white p-3.5 rounded-2xl border border-espresso/10 flex items-center justify-between gap-3 shadow-sm">
+          <div>
+            <div class="font-bold text-xs sm:text-sm text-espresso">${item.name}${item.hasSizes ? `<span class="ml-1 px-2 py-0.5 text-[10px] rounded-full bg-amberFlame/15 text-amberFlame font-extrabold">${item.size}</span>` : ''}</div>
+            <div class="text-xs font-semibold text-roast/70 mt-0.5">₹${item.unitPrice} × ${item.qty} = <strong class="text-espresso">₹${item.unitPrice * item.qty}</strong></div>
+          </div>
+          <div class="flex items-center gap-2 bg-cream px-2 py-1 rounded-xl border border-espresso/10">
+            <button onclick="changeCartQty('${item.key}', -1)" class="w-6 h-6 rounded-lg bg-white text-espresso font-bold text-xs flex items-center justify-center hover:bg-espresso hover:text-white transition cursor-pointer">-</button>
+            <span class="text-xs font-extrabold w-5 text-center">${item.qty}</span>
+            <button onclick="changeCartQty('${item.key}', 1)" class="w-6 h-6 rounded-lg bg-espresso text-white font-bold text-xs flex items-center justify-center hover:bg-amberFlame transition cursor-pointer">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleCart(open) { document.getElementById('cart-Modal').classList.toggle('hidden', !open); }
+    function setOrderType(type) {
+      orderType = type;
+      const pickupBtn = document.getElementById('type-pickup-btn');
+      const delBtn = document.getElementById('type-delivery-btn');
+      if (type.includes('Self-Pickup')) {
+        pickupBtn.className = 'py-2 px-3 rounded-xl text-xs font-bold border-2 border-espresso bg-espresso text-white transition cursor-pointer';
+        delBtn.className = 'py-2 px-3 rounded-xl text-xs font-bold border border-espresso/20 bg-cream text-espresso transition cursor-pointer';
+      } else {
+        delBtn.className = 'py-2 px-3 rounded-xl text-xs font-bold border-2 border-espresso bg-espresso text-white transition cursor-pointer';
+        pickupBtn.className = 'py-2 px-3 rounded-xl text-xs font-bold border border-espresso/20 bg-cream text-espresso transition cursor-pointer';
+      }
+    }
+    function setPhoneTarget(phone) {
+      targetWhatsAppNumber = phone;
+      const btn1 = document.getElementById('phone-btn-1');
+      const btn2 = document.getElementById('phone-btn-2');
+      btn1.className = phone === '918879546412' ? 'py-1.5 px-2 rounded-lg text-xs font-bold bg-sageLight border border-sage text-espresso cursor-pointer' : 'py-1.5 px-2 rounded-lg text-xs font-bold bg-cream border border-espresso/10 text-roast cursor-pointer';
+      btn2.className = phone === '919082260132' ? 'py-1.5 px-2 rounded-lg text-xs font-bold bg-sageLight border border-sage text-espresso cursor-pointer' : 'py-1.5 px-2 rounded-lg text-xs font-bold bg-cream border border-espresso/10 text-roast cursor-pointer';
+    }
+
+    function buildOrderSummaryText() {
+      const subtotal = cart.reduce((sum, i) => sum + (i.unitPrice * i.qty), 0);
+      const name = document.getElementById('cust-name').value.trim() || 'Guest';
+      const address = document.getElementById('cust-address').value.trim();
+      const notes = document.getElementById('cust-notes').value.trim();
+      let lines = [`🔥 *NEW ORDER — THE GRILLED AFFAIRS (TGA)* 🔥`, `----------------------------------`, `👤 *Customer:* ${name}`, `📦 *Mode:* ${orderType}`];
+      if (address) lines.push(`📍 *Address:* ${address}`);
+      lines.push(`----------------------------------`, `*ITEMS ORDERED:*`);
+      cart.forEach((item, index) => {
+        const sizeLabel = item.hasSizes ? ` [${item.size} Size]` : '';
+        lines.push(`${index + 1}. ${item.name}${sizeLabel} x ${item.qty} = ₹${item.unitPrice * item.qty}`);
+      });
+      lines.push(`----------------------------------`, `💰 *TOTAL AMOUNT: ₹${subtotal}*`);
+      if (subtotal >= 199 && orderType.includes('Weekend')) lines.push(`✅ *Eligible for FREE Weekend Delivery (within 1.5km)*`);
+      if (notes) lines.push(`📝 *Cooking Note:* ${notes}`);
+      lines.push(`\nMade with Passion, Served with Love ❤️`);
+      return lines.join('\n');
+    }
+
+    function sendWhatsAppOrder() {
+      if (cart.length === 0) { showToast('Please add at least one item from the menu first!'); return; }
+      window.open(`https://wa.me/${targetWhatsAppNumber}?text=${encodeURIComponent(buildOrderSummaryText())}`, '_blank');
+    }
+
+    function copyOrderSummary() {
+      if (cart.length === 0) { showToast('Your order bag is empty!'); return; }
+      const textarea = document.createElement('textarea');
+      textarea.value = buildOrderSummaryText();
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      showToast('Order summary copied to clipboard!');
+    }
+
+    let toastTimeout;
+    function showToast(msg) {
+      const toast = document.getElementById('toast-notification');
+      document.getElementById('toast-message').textContent = msg;
+      toast.classList.remove('opacity-0', 'translate-y-[-10px]');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-[-10px]');
+      }, 2600);
+    }
+
+    function initScrollReveal() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    window.onload = function () {
+      updateDayBanner();
+      renderMenu();
+      updateCartUI();
+      initScrollReveal();
+    };
+  </script>
+</body>
+</html>
+

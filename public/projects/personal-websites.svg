@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#061027"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" rx="24" fill="url(#bg)"/>
+  <circle cx="400" cy="140" r="240" fill="#00D4FF" fill-opacity="0.12"/>
+  <rect x="88" y="84" width="624" height="312" rx="18" fill="#09142B" stroke="#38BDF8" stroke-opacity="0.3"/>
+  <rect x="88" y="84" width="624" height="42" rx="18" fill="#0D1D3D"/>
+  <circle cx="118" cy="105" r="6" fill="#38BDF8"/>
+  <circle cx="138" cy="105" r="6" fill="#2563EB"/>
+  <circle cx="158" cy="105" r="6" fill="#1E293B"/>
+  <rect x="128" y="158" width="320" height="22" rx="11" fill="#00D4FF" fill-opacity="0.2"/>
+  <rect x="128" y="198" width="440" height="16" rx="8" fill="#1E293B"/>
+  <rect x="128" y="228" width="380" height="16" rx="8" fill="#1E293B"/>
+  <rect x="128" y="270" width="154" height="86" rx="14" fill="#0C1C3D" stroke="#00D4FF" stroke-opacity="0.35"/>
+  <rect x="302" y="270" width="154" height="86" rx="14" fill="#0C1C3D" stroke="#38BDF8" stroke-opacity="0.25"/>
+  <rect x="476" y="270" width="194" height="86" rx="14" fill="#0C1C3D" stroke="#38BDF8" stroke-opacity="0.25"/>
+  <text x="150" y="318" fill="#BAE6FD" font-family="monospace" font-size="13">BRAND UI</text>
+  <text x="324" y="318" fill="#BAE6FD" font-family="monospace" font-size="13">RESPONSIVE</text>
+  <text x="498" y="318" fill="#BAE6FD" font-family="monospace" font-size="13">FAST DELIVERY</text>
+</svg>
+
