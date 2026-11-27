@@ -44,11 +44,11 @@ export interface AchievementCategory {
 }
 
 export interface SocialLinkConfig {
-  id: "email" | "github" | "linkedin" | "instagram";
+  id: "email" | "phone" | "github" | "linkedin" | "instagram";
   label: string;
   /** Replace placeholder display text with your actual handle or address */
   displayValue: string;
-  /** Replace null with your real URL or mailto: address */
+  /** Replace null with your real URL, mailto:, or tel: address */
   href: string | null;
   isPlaceholder: boolean;
 }
@@ -91,6 +91,13 @@ export const portfolioConfig = {
   contactEndpoint: (import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined) || "",
 
   socialLinks: [
+    {
+      id: "phone",
+      label: "Phone",
+      displayValue: "9967188934",
+      href: "tel:9967188934",
+      isPlaceholder: false,
+    },
     {
       id: "email",
       label: "Email",

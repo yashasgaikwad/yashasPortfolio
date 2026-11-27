@@ -9,6 +9,7 @@ import {
   Linkedin,
   Loader2,
   Mail,
+  Phone,
   Send,
 } from "lucide-react";
 import { portfolioConfig, type SocialLinkConfig } from "../data/portfolio";
@@ -33,6 +34,8 @@ function SocialIcon({ id }: { id: SocialLinkConfig["id"] }) {
   switch (id) {
     case "email":
       return <Mail className={cls} />;
+    case "phone":
+      return <Phone className={cls} />;
     case "github":
       return <Github className={cls} />;
     case "linkedin":
@@ -161,7 +164,7 @@ export function ContactSection() {
                 Direct Channels
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                Reach out directly via email or connect with me on GitHub and LinkedIn.
+                Reach out directly via phone or email, or connect with me on GitHub and LinkedIn.
               </p>
 
               <div className="mt-6 space-y-3">
@@ -181,8 +184,8 @@ export function ContactSection() {
                         {item.href && !item.isPlaceholder ? (
                           <a
                             href={item.href}
-                            target={item.id === "email" ? undefined : "_blank"}
-                            rel={item.id === "email" ? undefined : "noopener noreferrer"}
+                            target={item.id === "email" || item.id === "phone" ? undefined : "_blank"}
+                            rel={item.id === "email" || item.id === "phone" ? undefined : "noopener noreferrer"}
                             className="block truncate text-sm font-medium text-white hover:text-cyan-300"
                           >
                             {item.displayValue}
