@@ -85,10 +85,12 @@ export const portfolioConfig = {
   },
 
   /**
-   * Set VITE_CONTACT_ENDPOINT in .env (e.g. https://formspree.io/f/your_id or /api/contact)
-   * to enable direct backend/email delivery from the contact form.
+   * Direct email delivery via FormSubmit (yashasgaikwad17@gmail.com) by default.
+   * Override with VITE_CONTACT_ENDPOINT in .env if using Formspree or /api/contact.
    */
-  contactEndpoint: (import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined) || "",
+  contactEndpoint:
+    (import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined) ||
+    "https://formsubmit.co/ajax/yashasgaikwad17@gmail.com",
 
   socialLinks: [
     {

@@ -98,15 +98,21 @@ export function ContactSection() {
       return;
     }
 
+    if (!/^\S+@\S+\.\S+$/.test(trimmed.email)) {
+      setSubmitStatus({
+        state: "error",
+        info: "Please enter a valid email address.",
+      });
+      return;
+    }
+
     const endpoint = portfolioConfig.contactEndpoint.trim();
 
     if (!endpoint) {
       const mailtoUrl = buildMailtoUrl(trimmed);
       setSubmitStatus({
         state: "fallback",
-        info: mailtoUrl
-          ? "No backend endpoint is configured in VITE_CONTACT_ENDPOINT yet — use the button below to send via your email app."
-          : "Contact delivery is ready once you set VITE_CONTACT_ENDPOINT (e.g. Formspree, Web3Forms, or /api/contact) in .env and your email in src/data/portfolio.ts.",
+        info: "Use the button below to send via your email app.",
         mailtoUrl,
       });
       return;
@@ -121,22 +127,41 @@ export function ContactSection() {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(trimmed),
+        body: JSON.stringify({
+          name: trimmed.fullName,
+          fullName: trimmed.fullName,
+          email: trimmed.email,
+          subject: trimmed.subject,
+          _subject: `[Portfolio] ${trimmed.subject}`,
+          _replyto: trimmed.email,
+          message: trimmed.message,
+        }),
       });
 
-      if (!res.ok) {
-        throw new Error(`Request failed with status ${res.status}`);
+      const data = (await res.json().catch(() => null)) as {
+        success?: boolean | string;
+        message?: string;
+      } | null;
+
+      if (!res.ok || data?.success === false || data?.success === "false") {
+        throw new Error(data?.message || `Request failed with status ${res.status}`);
       }
 
       setForm({ fullName: "", email: "", subject: "", message: "" });
       setSubmitStatus({
         state: "success",
-        info: "Thank you! Your message has been sent successfully.",
+        info: "Thank you! Your message has been sent directly to my inbox.",
       });
-    } catch {
+    } catch (err) {
+      const mailtoUrl = buildMailtoUrl(trimmed);
+      const errMsg =
+        err instanceof Error && err.message
+          ? err.message
+          : "Could not deliver message right now.";
       setSubmitStatus({
-        state: "error",
-        info: "Could not reach the configured contact endpoint. Check VITE_CONTACT_ENDPOINT or try again later.",
+        state: "fallback",
+        info: `${errMsg} You can also send your message directly via your email app below.`,
+        mailtoUrl,
       });
     }
   };
@@ -348,9 +373,9 @@ export function ContactSection() {
 
               <div className="mt-6 flex items-center justify-between gap-4">
                 <span className="font-mono text-[11px] text-slate-400">
-                  {portfolioConfig.contactEndpoint
-                    ? "Connected to configured backend endpoint"
-                    : "Ready for VITE_CONTACT_ENDPOINT or /api/contact"}
+                  {configuredEmail
+                    ? `Messages go directly to ${configuredEmail}`
+                    : "Direct email delivery enabled"}
                 </span>
 
                 <button
